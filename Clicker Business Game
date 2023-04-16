@@ -1,0 +1,159 @@
+print("Hello, welcome to Business Miner")
+import time
+
+time.sleep(0.4)
+print("First, we need your information to continue.")
+print("")
+
+time.sleep(0.4)
+name_of_user = input("Enter your name: ")
+time.sleep(0.4)
+
+while True:
+    try:
+        age_of_user = int(input("Enter your age here: "))
+        if age_of_user < 18:
+            print("Your age must be more than 18 years to make a bank account.")
+        elif age_of_user >= 18:
+            break
+        else:
+            print("Wrong credentials")
+    except ValueError:
+        print("Please enter a valid age.")
+
+time.sleep(0.7)
+
+print("-----------Your Credit Card Details-----------")
+print("--Card number: 99991234567--")
+print("--CVV: 453--")
+print("--Expire Date : 08/29--")
+print("")
+
+balance = 10000
+
+def add_balance():
+    global balance
+    time.sleep(1000)
+    balance += 7000
+    print("$7,000 have been added to your account for taking Rent")
+
+
+
+print("Press enter to gain $1 on every press.")
+
+while True:
+    user_input = input("Press enter to gain $1 on every press or type help for help: ")
+    
+    if user_input == "":
+        balance += 1
+        print("Your balance is now $", balance)
+
+    elif user_input.lower() == "help":
+        print("----------Here are all the commands you can access:----------")
+        print("----------balance = To check your balance----------")
+        print("----------exit = To exit the program----------")
+        print("----------buy = To Buy Homes and to collect rent----------")
+
+    elif user_input.lower() == "balance":
+        print("")
+        print("---------------Your balance is $", balance, "------------------")
+        print("")
+
+    elif user_input.lower() == "exit":
+        break
+
+    elif user_input.lower() == "buy":
+        print("----------------Menu--------------")
+        print("Press 1 to get Houses list to buy")
+        print("Press 2 to get Vehicles list to buy")
+
+        buy_choice = int(input("Enter Your choice "))
+        if buy_choice == 1:
+            print("-----------------House List----------------")
+            print("1. L Shape House ")
+            print("2. Double Door")
+            print("3. Triple Door")
+            house_choice = int(input("Enter house number to buy-- "))
+            if house_choice == 1:
+                print("----L Shape House---- $10,000")
+                time.sleep(0.5)
+                card_information = int(input("Enter your Card Number "))
+                if card_information == 99991234567:
+                    cvv_info = int(input("Enter your CVV number "))
+                    if cvv_info == 453:
+                        print("Okay, Now Checking your bank balance")
+                        expiry_info = input("Enter your card expiry date ")
+                        time.sleep(1)
+                        if expiry_info == "08/29":
+                            print("You have successfully entered all information correctly")
+                            if balance >= 10000:
+                                balance -= 10000
+                                print("$10,000 have been taken from your account to buy this house ")
+                                while True:
+                                    add_balance()
+
+
+                            else:
+                                
+                                print("You don't have enough money to buy this home")
+                                time.sleep(1)
+                        else:
+                            print("Invalid Credentials")
+                            time.sleep(1)
+                    else:
+                        print("Invalid Credentials")
+                        time.sleep(1)
+                else:
+                    print("Invalid Credentials")
+                    time.sleep(1)
+            else:
+                print("Invalid Credentials")
+                time.sleep(1)
+
+            if house_choice == 2:
+                print("----Double Door---- $35,000")
+                time.sleep(0.5)
+                card_information = int(input("Enter your Card Number "))
+                if card_information == 99991234567:
+                    cvv_info = int(input("Enter your CVV number "))
+                    if cvv_info == 453:
+                        print("Okay, Now Checking your bank balance")
+                        expiry_info = input("Enter your card expiry date ")
+                        time.sleep(1)
+                        if expiry_info == "08/29":
+                            print("You have successfully entered all information correctly")
+                            if balance >= 35000:
+                                balance -= 35000
+                                print("$35,000 have been taken from your account to buy this house ")
+                                while True:
+                                    add_balance()    
+                                    time.sleep(1000)
+                                    balance =+ 21000                               
+
+            
+                                
+                            else:
+
+                                print("You don't have enough money to buy this home")
+                                time.sleep(1)
+                        else:
+                            print("Invalid Credentials")
+                            time.sleep(1)
+                    else:
+                        print("Invalid Credentials")
+                        time.sleep(1)
+                else:
+                    print("Invalid Credentials")
+                    time.sleep(1)
+            else:
+                print("Invalid Credentials")
+                time.sleep(1)
+        else:
+            print("Invalid Credentials")
+            time.sleep(1)
+    else:
+        print("Invalid command")
+        time.sleep(1)
+
+
+
